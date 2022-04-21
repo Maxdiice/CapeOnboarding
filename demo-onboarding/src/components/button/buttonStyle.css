@@ -1,0 +1,18 @@
+.btn {
+  height: 36px;
+  width: 100%;
+  left: 0px;
+  top: 24px;
+  border-radius: 200px !important;
+  padding: 6px, 16px, 6px, 16px;
+  text-transform: uppercase;
+}
+
+.btn-main {
+  background: linear-gradient(135deg, #E64C4E 0%, #EF33F9 100%);
+  color: white !important;
+}
+
+.btn-secondary {
+  color: #333333 !important;
+}

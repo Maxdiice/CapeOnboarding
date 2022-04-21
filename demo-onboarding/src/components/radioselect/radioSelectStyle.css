@@ -1,0 +1,42 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.radio-option {
+  display: flex;
+  height: 56px;
+  padding: 16px;
+  gap: 16px;
+  border: 1px solid #00000033;
+  border-radius: 4px;
+}
+
+.question-text {
+  padding: 0;
+  width: 100%;
+}
+
+.question-text p, h3 {
+  margin-top: 4px;
+}
+
+.active {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: white;
+  background-clip: padding-box;
+}
+
+.active::after {
+  position: absolute;
+  top: -1px; bottom: -1px;
+  left: -1px; right: -1px;
+  background: linear-gradient(135deg, #E64C4E 0%, #EF33F9 100%);
+  content: '';
+  z-index: -1;
+  border-radius: 4px;
+}
+
