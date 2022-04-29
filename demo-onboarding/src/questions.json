@@ -1,0 +1,239 @@
+{
+    "questionList": [
+        {
+            "Condition": "all",
+            "Title": "For who are you managing their marketing",
+            "Description": "Select the situation that describes your marketing situation.",
+            "Illustration": "question",
+            "Type": "select",
+            "Size": "big",
+            "Answers": [
+                {   
+                    "ID": 0,
+                    "Title": "Single brand", 
+                    "Description":"We manange the marketing for a single brand",
+                    "Icon": "RocketLaunchIcon",
+                    "Illustration": "singleBrand"
+                },
+                {   
+                    "ID": 1,
+                    "Title": "Multiple brands", 
+                    "Description":"We manage multiple brands within our company",
+                    "Icon": "StyleIcon",
+                    "Illustration": "multipleBrands"
+                },
+                {   
+                    "ID": 2,
+                    "Title": "We're an agency", 
+                    "Description":"We manage the marketing for different companies",
+                    "Icon": "CampaignIcon",
+                    "Illustration": "agency"
+                }
+            ]
+        },
+        {
+            "Client": ["agency, multiple brands"],
+            "Title": "What brand are we going to launch first?",
+            "Description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
+            "Type": "input",
+            "Illustration": "palette",
+            "Answers": [
+                {
+                    "Label": "Brand Name",
+                    "Type": "text"
+                }
+            ]
+        },
+        {
+            "Condition": "all",
+            "Title": "In what business sector is {brand} primarily active?",
+            "Description": "Select one business sector that fits Brand the best. This is used to create the best possible campaigns for your brand.",
+            "Illustration": "question",
+            "Type": "select",
+            "Size": "small",
+            "Answers": [
+                {   
+                    "ID": 0,
+                    "Title": "Travel", 
+                    "Icon": "TravelExploreIcon",
+                    "Illustration": "globe"
+                },
+                {   
+                    "ID": 1,
+                    "Title": "Real estate", 
+                    "Icon": "GiteIcon",
+                    "Illustration": "location"
+                },
+                {   
+                    "ID": 2,
+                    "Title": "Automotive", 
+                    "Icon": "DirectionsCarIcon",
+                    "Illustration": "vehicle"
+                },
+                {   
+                    "ID": 3,
+                    "Title": "Food & beverages", 
+                    "Icon": "FastfoodIcon",
+                    "Illustration": "food"
+                },
+                {   
+                    "ID": 4,
+                    "Title": "Home & lifestyle", 
+                    "Icon": "WeekendIcon",
+                    "Illustration": "desk"
+                },
+                {   
+                    "ID": 5,
+                    "Title": "Sport", 
+                    "Icon": "SportsSoccerIcon",
+                    "Illustration": "treadmill"
+                },
+                {   
+                    "ID": 6,
+                    "Title": "Telco", 
+                    "Icon": "LeakAddIcon",
+                    "Illustration": "cloud"
+                },
+                {   
+                    "ID": 7,
+                    "Title": "Fashion", 
+                    "Icon": "ShoppingBagIcon",
+                    "Illustration": "shoppingbag"
+                },
+                {   
+                    "ID": 8,
+                    "Title": "Delivery", 
+                    "Icon": "DeliveryDiningIcon",
+                    "Illustration": "scooter"
+                },
+                {   
+                    "ID": 9,
+                    "Title": "Supermarket", 
+                    "Icon": "LocalGroceryStoreIcon",
+                    "Illustration": "supermarket"
+                }
+            ]
+        },
+        {
+            "Condition": "all",
+            "Title": "For what type of channels do you plan on creating automated campaigns?",
+            "Description": "Select at least one channel you would like to create automated digital campaigns for?",
+            "Illustration": "megaphone",
+            "Type": "multi",
+            "Size": "big",
+            "Format": "text",
+            "Answers": [
+                {   
+                    "id": 0,
+                    "Title": "Display channels",
+                    "tag": "display", 
+                    "Description":"Create hundreds of data-driven ads at scale in seconds for all platforms of your choice",
+                    "Icon": "DevicesIcon",
+                    "Illustration": "display channels"
+                },
+                {
+                    "id": 1,
+                    "Title": "Social channels",
+                    "tag": "social", 
+                    "Description":"Create social content in seconds for the platforms of your choice like Facebook, Instagram, Snapchat etc.",
+                    "Icon": "ShareIcon",
+                    "Illustration": "social media"
+                },
+                {   
+                    "id": 2,
+                    "Title": "Online video channels",
+                    "tag": "video", 
+                    "Description":"Create smart, dynamic, fast and easisly scalable video ads that can be published or exported",
+                    "Icon": "MovieFilterIcon",
+                    "Illustration": "video player"
+                }
+            ]
+        },
+        {
+            "Index": 4,
+            "Title": "In what business sector is Brand primarily active?",
+            "Description": "Select one business sector that fits Brand the best. This is used to create the best possible campaigns for your brand.",
+            "Illustration": "question",
+            "AnswerType": "single",
+            "AnswerFormat": "small",
+            "SocialAnswers": [
+                {   
+                    "ID": 0,
+                    "Title": "Facebook"
+                },
+                {   
+                    "ID": 1,
+                    "Title": "Instagram"
+                },
+                {   
+                    "ID": 2,
+                    "Title": "Snapchat"
+                },
+                {   
+                    "ID": 3,
+                    "Title": "TikTok"
+                },
+                {   
+                    "ID": 4,
+                    "Title": "YouTube"
+                },
+                {   
+                    "ID": 5,
+                    "Title": "Twitter"
+                },
+                {   
+                    "ID": 6,
+                    "Title": "LinkedIN"
+                },
+                {   
+                    "ID": 7,
+                    "Title": "Pinterest"
+                }
+            ],
+            "ManagementAnswers": [
+                {   
+                    "ID": 0,
+                    "Title": "Google Marketing Platform"
+                },
+                {   
+                    "ID": 1,
+                    "Title": "Google Ads"
+                },
+                {   
+                    "ID": 2,
+                    "Title": "DV360"
+                }
+            ]
+        },
+        {
+            "Client": "all",
+            "Title": "What brand are we going to launch first?",
+            "Description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
+            "AnswerType": "input",
+            "Illustration": "profile",
+            "Answers": [
+                {
+                    "Label": "First name",
+                    "Type": "text"
+                },
+                {
+                    "Label": "Last name",
+                    "Type": "text"
+                },
+                {
+                    "Label": "E-mail",
+                    "Type": "e-mail"
+                },
+                {
+                    "Label": "Phonenumber",
+                    "Type": "phonenumber"
+                },
+                {
+                    "Label": "Company name",
+                    "Type": "text"
+                }
+            ]
+        }
+]
+
+}

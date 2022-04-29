@@ -4,15 +4,14 @@ import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import './textfieldStyle.css';
 
-class TextFieldStyled extends Component {
-
-    render() {
-        return  <div>
-                    <FormControl fullWidth >
-                        <TextField variant="outlined" label="First Name"></TextField>
-                    </FormControl>
-                </div>
-    }
+function Input(props) {
+    return (
+        <>
+            <FormControl onChange={props.onChange} fullWidth >
+                <TextField variant="outlined" label={props.title}></TextField>
+            </FormControl>
+        </>
+    )
 }
 
-export default TextFieldStyled;
+export default Input;
