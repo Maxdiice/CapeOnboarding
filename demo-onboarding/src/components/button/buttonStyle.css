@@ -16,9 +16,17 @@
   color: #333333 !important;
 }
 
+.btn-secondary:hover {
+  background: #33333315 !important;
+}
+
 .Mui-disabled { opacity: 0.5 ; }
 
 .margin {
-  margin-top: 32px;
+  margin-top:32px;
+}
+
+.btn:hover {
+  opacity: 0.95;
 }
 

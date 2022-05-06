@@ -1,0 +1,59 @@
+.stepper-background {
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background-color: #F3F7FE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.stepper-placement {
+    position: absolute;
+    background: none;
+    pointer-events: none;
+}
+
+.offset-step {
+    margin-top: -8px;
+    margin-left: 163px;
+    width: 24px;
+    height:24px;
+    border-radius:50%;
+    -webkit-box-shadow:inset 0px 0px 0px 4px #EBEBEB;
+    -moz-box-shadow:inset 0px 0px 0px 4px #EBEBEB;
+    box-shadow:inset 0px 0px 0px 4px #EBEBEB;
+    background-color: white;
+    pointer-events:auto;
+}
+
+
+.offset-step:hover {
+    cursor: not-allowed;
+    }
+
+.completed-step {
+    box-shadow: none;
+    background-color: #ED39D3
+}
+
+.completed-step:hover {
+    filter: brightness(120%);
+    pointer-events:auto;
+    cursor: pointer !important;
+}
+
+.current-step {
+    -webkit-box-shadow:inset 0px 0px 0px 4px #ED39D3;
+    -moz-box-shadow:inset 0px 0px 0px 4px #ED39D3;
+    box-shadow:inset 0px 0px 0px 4px #ED39D3;
+    background-color: white;
+}
+
+.current-step:hover {
+cursor: not-allowed;
+}
+
+.CircularProgressbarWithChildren-trail {
+    stroke-dasharray: 5;
+    stroke: red;
+}

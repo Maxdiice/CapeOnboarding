@@ -21,7 +21,10 @@ function Multi(props) {
 
   return  (
     <ThemeProvider theme={theme}>      
-      <div  className={"radio-option radio-option-big"  +  (props.visible[props.id]? ' active' : '' )}>
+      <div
+      onClick={() => props.onChange(props.id)}
+      className={"radio-option radio-option-big"  +  (props.visible[props.id]? ' active' : '' )}
+      >
         <div className={"icon-big"}>
           <SvgIcon component={GetSVG(props.icon)} inheritViewBox />
         </div>
@@ -30,9 +33,10 @@ function Multi(props) {
           <p><small>{props.description}</small></p>
         </div> 
         <Checkbox
-            value={props.id}
-            onChange={props.onChange}
-          />
+          checked={props.visible[props.id]}
+          value={props.id}
+          onChange={() => props.onChange(props.id)}
+        />
       </div>
     </ThemeProvider>
   )

@@ -1,0 +1,5 @@
+.flex-toggle {
+    display: flex;
+    flex-direction: column !important;
+    width: 465px !important;
+}

@@ -1,238 +1,264 @@
 {
     "questionList": [
         {
-            "Condition": "all",
-            "Title": "For who are you managing their marketing",
-            "Description": "Select the situation that describes your marketing situation.",
-            "Illustration": "question",
-            "Type": "select",
-            "Size": "big",
-            "Answers": [
+            "title": "For who are you managing their marketing",
+            "step": "0.5",
+            "description": "Select the situation that describes your marketing situation.",
+            "illustration": "unknown",
+            "type": "select",
+            "size": "big",
+            "previous": "Intro",
+            "answers": [
                 {   
-                    "ID": 0,
-                    "Title": "Single brand", 
-                    "Description":"We manange the marketing for a single brand",
-                    "Icon": "RocketLaunchIcon",
-                    "Illustration": "singleBrand"
+                    "key": "singleBrand",
+                    "title": "Single brand", 
+                    "description":"We manange the marketing for a single brand",
+                    "icon": "RocketLaunchIcon",
+                    "illustration": "singleBrand"
                 },
                 {   
-                    "ID": 1,
-                    "Title": "Multiple brands", 
-                    "Description":"We manage multiple brands within our company",
-                    "Icon": "StyleIcon",
-                    "Illustration": "multipleBrands"
+                    "key": "multipleBrands",
+                    "title": "Multiple brands", 
+                    "description":"We manage multiple brands within our company",
+                    "icon": "StyleIcon",
+                    "illustration": "multipleBrands"
                 },
                 {   
-                    "ID": 2,
-                    "Title": "We're an agency", 
-                    "Description":"We manage the marketing for different companies",
-                    "Icon": "CampaignIcon",
-                    "Illustration": "agency"
+                    "key": "agency",
+                    "title": "We're an agency", 
+                    "description":"We manage the marketing for different companies",
+                    "icon": "CampaignIcon",
+                    "illustration": "agency"
                 }
             ]
         },
         {
-            "Client": ["agency, multiple brands"],
-            "Title": "What brand are we going to launch first?",
-            "Description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
-            "Type": "input",
-            "Illustration": "palette",
-            "Answers": [
+            "title": "What brand are we going to launch first?",
+            "step": "1",
+            "description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
+            "type": "input",
+            "quantity": "single",
+            "illustration": "paint",
+            "previous": "Marketing situation",
+            "answers": [
                 {
-                    "Label": "Brand Name",
-                    "Type": "text"
+                    "label": "Brand Name",
+                    "type": "text",
+                    "width": "fullwidth"
                 }
             ]
         },
         {
-            "Condition": "all",
-            "Title": "In what business sector is {brand} primarily active?",
-            "Description": "Select one business sector that fits Brand the best. This is used to create the best possible campaigns for your brand.",
-            "Illustration": "question",
-            "Type": "select",
-            "Size": "small",
-            "Answers": [
+            "title": "In what business sector is {brand} primarily active?",
+            "step": "1.5",
+            "description": "Select one business sector that fits {brand} the best. This is used to create the best possible campaigns for your brand.",
+            "illustration": "question",
+            "type": "select",
+            "size": "small",
+            "previous": "Brand info",
+            "answers": [
                 {   
-                    "ID": 0,
-                    "Title": "Travel", 
-                    "Icon": "TravelExploreIcon",
-                    "Illustration": "globe"
+                    "key": "travel",
+                    "title": "Travel", 
+                    "icon": "TravelExploreIcon",
+                    "illustration": "travel"
                 },
                 {   
-                    "ID": 1,
-                    "Title": "Real estate", 
-                    "Icon": "GiteIcon",
-                    "Illustration": "location"
+                    "key": "realEstate",
+                    "title": "Real estate", 
+                    "icon": "GiteIcon",
+                    "illustration": "realEstate"
                 },
                 {   
-                    "ID": 2,
-                    "Title": "Automotive", 
-                    "Icon": "DirectionsCarIcon",
-                    "Illustration": "vehicle"
+                    "key": "automotive",
+                    "title": "Automotive", 
+                    "icon": "DirectionsCarIcon",
+                    "illustration": "automotive"
                 },
                 {   
-                    "ID": 3,
-                    "Title": "Food & beverages", 
-                    "Icon": "FastfoodIcon",
-                    "Illustration": "food"
+                    "key": "foodBeverages",
+                    "title": "Food & beverages", 
+                    "icon": "FastfoodIcon",
+                    "illustration": "foodBeverages"
                 },
                 {   
-                    "ID": 4,
-                    "Title": "Home & lifestyle", 
-                    "Icon": "WeekendIcon",
-                    "Illustration": "desk"
+                    "key": "homeLifestyle",
+                    "title": "Home & lifestyle", 
+                    "on": "WeekendIcon",
+                    "illustration": "homeLifestyle"
                 },
                 {   
-                    "ID": 5,
-                    "Title": "Sport", 
-                    "Icon": "SportsSoccerIcon",
-                    "Illustration": "treadmill"
+                    "key": "sport",
+                    "title": "Sport", 
+                    "icon": "SportsSoccerIcon",
+                    "illustration": "sport"
                 },
                 {   
-                    "ID": 6,
-                    "Title": "Telco", 
-                    "Icon": "LeakAddIcon",
-                    "Illustration": "cloud"
+                    "key": "telco",
+                    "title": "Telco", 
+                    "icon": "LeakAddIcon",
+                    "illustration": "telco"
                 },
                 {   
-                    "ID": 7,
-                    "Title": "Fashion", 
-                    "Icon": "ShoppingBagIcon",
-                    "Illustration": "shoppingbag"
+                    "key": "fashion",
+                    "title": "Fashion", 
+                    "icon": "ShoppingBagIcon",
+                    "illustration": "fashion"
                 },
                 {   
-                    "ID": 8,
-                    "Title": "Delivery", 
-                    "Icon": "DeliveryDiningIcon",
-                    "Illustration": "scooter"
+                    "key": "delivery",
+                    "title": "Delivery", 
+                    "icon": "DeliveryDiningIcon",
+                    "illustration": "delivery"
                 },
                 {   
-                    "ID": 9,
-                    "Title": "Supermarket", 
-                    "Icon": "LocalGroceryStoreIcon",
-                    "Illustration": "supermarket"
+                    "key": "supermarket",
+                    "title": "Supermarket", 
+                    "icon": "LocalGroceryStoreIcon",
+                    "illustration": "supermarket"
                 }
             ]
         },
         {
-            "Condition": "all",
-            "Title": "For what type of channels do you plan on creating automated campaigns?",
-            "Description": "Select at least one channel you would like to create automated digital campaigns for?",
-            "Illustration": "megaphone",
-            "Type": "multi",
-            "Size": "big",
-            "Format": "text",
-            "Answers": [
+            "title": "For what type of channels do you plan on creating automated campaigns?",
+            "description": "Select at least one channel you would like to create automated digital campaigns for?",
+            "step": "2",
+            "illustration": "megaphone",
+            "type": "multi",
+            "size": "big",
+            "format": "text",
+            "previous": "Brand sector",
+            "answers": [
                 {   
                     "id": 0,
-                    "Title": "Display channels",
+                    "title": "Display channels",
                     "tag": "display", 
-                    "Description":"Create hundreds of data-driven ads at scale in seconds for all platforms of your choice",
-                    "Icon": "DevicesIcon",
-                    "Illustration": "display channels"
+                    "description":"Create hundreds of data-driven ads at scale in seconds for all platforms of your choice",
+                    "icon": "DevicesIcon",
+                    "illustration": "display"
                 },
                 {
                     "id": 1,
-                    "Title": "Social channels",
+                    "title": "Social channels",
                     "tag": "social", 
-                    "Description":"Create social content in seconds for the platforms of your choice like Facebook, Instagram, Snapchat etc.",
-                    "Icon": "ShareIcon",
-                    "Illustration": "social media"
+                    "description":"Create social content in a matter of seconds for all the platforms of your choice",
+                    "icon": "ShareIcon",
+                    "illustration": "socials"
                 },
                 {   
                     "id": 2,
-                    "Title": "Online video channels",
+                    "title": "Online video channels",
                     "tag": "video", 
-                    "Description":"Create smart, dynamic, fast and easisly scalable video ads that can be published or exported",
-                    "Icon": "MovieFilterIcon",
-                    "Illustration": "video player"
+                    "description":"Create smart, dynamic, fast and easisly scalable video ads that can be published or exported",
+                    "icon": "MovieFilterIcon",
+                    "illustration": "video"
                 }
             ]
         },
         {
             "Index": 4,
-            "Title": "In what business sector is Brand primarily active?",
-            "Description": "Select one business sector that fits Brand the best. This is used to create the best possible campaigns for your brand.",
-            "Illustration": "question",
-            "AnswerType": "single",
-            "AnswerFormat": "small",
-            "SocialAnswers": [
+            "title": "What channels does {brand} use or plan on using for their marketing?",
+            "description": "Select one or multiple channels that {brand} uses or plans on using for their creating digital campaigns.",
+            "step": "2.5",
+            "illustration": "socialmedia",
+            "type": "toggle",
+            "answerFormat": "small",
+            "previous": "Campaign channels",
+            "socialAnswers": [
                 {   
                     "ID": 0,
-                    "Title": "Facebook"
+                    "title": "Meta for Business"
                 },
                 {   
                     "ID": 1,
-                    "Title": "Instagram"
+                    "title": "Facebook"
                 },
                 {   
                     "ID": 2,
-                    "Title": "Snapchat"
+                    "title": "Instagram"
                 },
                 {   
                     "ID": 3,
-                    "Title": "TikTok"
+                    "title": "YouTube"
                 },
                 {   
                     "ID": 4,
-                    "Title": "YouTube"
+                    "title": "Snapchat"
                 },
                 {   
                     "ID": 5,
-                    "Title": "Twitter"
+                    "title": "LinkedIN"
                 },
                 {   
                     "ID": 6,
-                    "Title": "LinkedIN"
+                    "title": "TikTok"
                 },
                 {   
                     "ID": 7,
-                    "Title": "Pinterest"
+                    "title": "Pinterest"
+                },
+                {   
+                    "ID": 8,
+                    "title": "Twitter"
                 }
             ],
-            "ManagementAnswers": [
+            "managementAnswers": [
                 {   
                     "ID": 0,
-                    "Title": "Google Marketing Platform"
+                    "title": "Campaign Manager 360"
                 },
                 {   
                     "ID": 1,
-                    "Title": "Google Ads"
+                    "title": "Google Ads"
                 },
                 {   
                     "ID": 2,
-                    "Title": "DV360"
+                    "title": "DV360"
                 }
             ]
         },
         {
-            "Client": "all",
-            "Title": "What brand are we going to launch first?",
-            "Description": "First we need some brand details so we can create some awesome automated marketing campaigns!",
-            "AnswerType": "input",
-            "Illustration": "profile",
-            "Answers": [
-                {
-                    "Label": "First name",
-                    "Type": "text"
+            "title": "Your demo environment is ready!",
+            "description": "Before you can start creating awesome campaigns so first need to setup your account to gain access at al time.",
+            "type": "input",
+            "step": "3",
+            "illustration": "profile",
+            "quantity": "multiple",
+            "previous": "Campaign channels",
+            "answers": [
+                {   
+                    "key": 0,
+                    "label": "Full name",
+                    "type": "text",
+                    "width": "half"
                 },
-                {
-                    "Label": "Last name",
-                    "Type": "text"
+                {   
+                    "key": 1,
+                    "label": "E-mail",
+                    "type": "email",
+                    "width": "fullwidth"
                 },
-                {
-                    "Label": "E-mail",
-                    "Type": "e-mail"
+                {   
+                    "key": 2,
+                    "label": "Phonenumber",
+                    "type": "phonenumber",
+                    "width": "fullwidth"
                 },
-                {
-                    "Label": "Phonenumber",
-                    "Type": "phonenumber"
-                },
-                {
-                    "Label": "Company name",
-                    "Type": "text"
+                {   
+                    "key": 3,
+                    "label": "Company name",
+                    "type": "text",
+                    "width": "fullwidth"
                 }
             ]
+        },
+        {
+            "title": "Setup completed!",
+            "step": "4",
+            "description": "Confirm that the information you've provided is correct and agree to the terms of condition before entering your demo environment.",
+            "type": "stepper",
+            "illustration": "confetti",
+            "previous": "account details"
         }
 ]
 

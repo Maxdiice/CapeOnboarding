@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import React, { Component } from "react";
 import './buttonStyle.css';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 
 function ButtonStyled(props) {
@@ -9,13 +9,13 @@ function ButtonStyled(props) {
     const backButton = () => {
         if (props.currentQuestion === 0) {
     }   else {
-        return <Button className="btn btn-secondary" onClick={props.previous}>previous</Button>
+        return <Button className="btn btn-secondary" onClick={props.previous} startIcon={<ArrowBackIosIcon sx={{height: "16px", marginRight: "0px", textDecoration: "none"}}/>}  sx={{marginTop: "8px"}}>{props.previousText}</Button>
     }
 }
 
     return (
         <>   
-            <div className="Margin"/>
+            <div className="margin"/>
             <Button className="btn btn-main" onClick={props.onClick} disabled={!props.disabled}>Continue</Button>
             {backButton()}
         </>

@@ -2,18 +2,22 @@
 import React, { Component } from "react";
 import './headingStyle.css';
 
-class Heading extends Component {
+function Heading(props) {
 
-    constructor(props) {
-        super(props);
+
+    const brandName = props.brandName;
+
+    const checkBrandname = (sentence) => {
+        if(brandName && sentence.includes("{brand}")) {
+            return sentence.replace("{brand}", brandName);
+        } else return sentence;
     }
 
-    render() {
-        return<>
-            <h1>{this.props.title}</h1>
-            <p>{this.props.subtext}</p>
-        </>
-    }
+    return<>
+        <h1>{checkBrandname(props.title)}</h1>
+        <p>{checkBrandname(props.subtext)}</p>
+    </>
+    
 }
 
 export default Heading;
