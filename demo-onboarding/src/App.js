@@ -4,11 +4,10 @@ import Select from "./components/select/select"
 import Input from "./components/textfield/textfield";
 import Toggle from "./components/toggle/toggle";
 import Multi from "./components/multi/multi";
+import Sector from "./components/sector/sector";
 import Stepper from "./components/stepper/stepper";
 import { useState } from "react";
-import { styled } from '@mui/material/styles';
 import questions from "./questions.json";
-import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import './App.css';
 import { ReactComponent as Cape } from './assets/cape.svg';
 
@@ -21,6 +20,7 @@ function App() {
     const [formats, setFormats] = useState();
     const [inputs, setInputs] = useState([]);
     const [contact, setContact] = useState([])
+    const [sector, setSector] = useState([])
     const [inputsFilled, setInputsFilled] = useState([false, false, true, false])
     const [emailValidated, setEmailValidated] = useState(true);
     const [highest, setHighest] = useState(0);
@@ -51,6 +51,8 @@ function App() {
 
         if (currentQuestion === 3) {
             newAnswers[currentQuestion] = channels;
+        } else if (currentQuestion === 2) {
+            newAnswers[currentQuestion] = sector;
         } else if (currentQuestion === 4) {
             newAnswers[currentQuestion] = contact;
         } else if (currentQuestion === 1) {
@@ -98,7 +100,7 @@ function App() {
         }
     };
 
-    // Multi select
+    // Multi select 
     const channelCheckbox = (e) => {
         const newItem = [...channels];
         newItem[e] = channels[e] ? false : true;
@@ -106,12 +108,25 @@ function App() {
         console.log(channels);
     }
 
-    // Toogle answer
-    const handleContact = (event, newContacts) => {
-        if (!contact.includes(newContacts)) {
-            setContact((contact) => [...contact, newContacts])
+    // Toggle answer channels
+    const handleContact = (event) => {
+        if (!contact.includes(event.target.value)) {
+            setContact((contact) => [...contact, event.target.value])
         } else setContact(contact.filter(newContacts => event.target.value !== newContacts))
         console.log(contact)
+    };
+
+    // Toggle answer sectors
+    const handleSector = (event) => {
+        if (!sector.includes(event)) {
+            setSector((sector) => [...sector, event])
+            setIllustration(event);
+        } else {
+            setSector(sector.filter(selectedSector => event !== selectedSector))
+            if (illustration == event) {
+                sector.length == 1 ? setIllustration("question") : setIllustration(sector[0])
+            }
+        }
     };
 
     //Check if answer picked
@@ -125,14 +140,15 @@ function App() {
                 return contact.length > 0 ? true : false
             case 'select':
                 return selectedValue == null ? false : true
+            case 'sector':
+                return sector.length > 0 ? true : false
         }
     }
 
     //Multiple inputProps
     const handleInputs = (e, index) => {
         const newItem = [...inputsFilled];
-
-
+    
         if (question.quantity == "multiple") {
             const newInputs = [...inputs];
             newInputs[index] = e.target.value;
@@ -214,9 +230,23 @@ function App() {
                             tag={item.tag}
                             id={item.id}
                             visible={channels}
+                            sector={sector}
+                            answerSize={item.size}
                         />
                     )
                 })
+                case 'sector':
+                return <div className="sector-flexbox">{question.answers.map(item => {
+                    return (
+                        <Sector
+                            title={item.title}
+                            icon={item.icon}
+                            onChange={handleSector}
+                            value={item.key}
+                            sector={sector}
+                        />
+                    )
+                })}</div>
             case 'toggle':
                 const toggleQuestions = answers[3]
                 if (toggleQuestions[1]) { // socials selected
@@ -253,7 +283,7 @@ function App() {
     <a href="https://www.bycape.io"><Cape style={{position:"absolute", margin: "24"}} href="bycape.io"/></a>
     <div className="box">
                 <div className="question-container">
-                    <Heading title={question.title} subtext={question.description} brandName={answers[1]}></Heading>
+                    <Heading title={question.title} subtext={question.description} brandName={answers[1]} personInfo={answers[5]}></Heading>
                     <div className="margin-question" />
                     {renderQuestion()}
                     <ButtonStyled

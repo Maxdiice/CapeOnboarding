@@ -42,7 +42,6 @@
   margin-top: 40px;
 }
 
-
 .box {
   display: flex;
   justify-content: space-evenly;
@@ -51,7 +50,14 @@
   width: 100vw;
   background: none;
 }
+
 .question-container {
   width:500px;
   margin-left: 50px;
+}
+.sector-flexbox {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

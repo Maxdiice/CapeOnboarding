@@ -1,7 +1,7 @@
 {
     "questionList": [
         {
-            "title": "For who are you managing their marketing",
+            "title": "Let's get to know eachother. What kind of marketeer are you?",
             "step": "0.5",
             "description": "Select the situation that describes your marketing situation.",
             "illustration": "unknown",
@@ -11,21 +11,14 @@
             "answers": [
                 {   
                     "key": "singleBrand",
-                    "title": "Single brand", 
-                    "description":"We manange the marketing for a single brand",
+                    "title": "An in-house advertiser", 
+                    "description":"We manange the marketing within our company",
                     "icon": "RocketLaunchIcon",
                     "illustration": "singleBrand"
                 },
                 {   
-                    "key": "multipleBrands",
-                    "title": "Multiple brands", 
-                    "description":"We manage multiple brands within our company",
-                    "icon": "StyleIcon",
-                    "illustration": "multipleBrands"
-                },
-                {   
                     "key": "agency",
-                    "title": "We're an agency", 
+                    "title": "An agency", 
                     "description":"We manage the marketing for different companies",
                     "icon": "CampaignIcon",
                     "illustration": "agency"
@@ -53,7 +46,7 @@
             "step": "1.5",
             "description": "Select one business sector that fits {brand} the best. This is used to create the best possible campaigns for your brand.",
             "illustration": "question",
-            "type": "select",
+            "type": "sector",
             "size": "small",
             "previous": "Brand info",
             "answers": [
@@ -84,7 +77,7 @@
                 {   
                     "key": "homeLifestyle",
                     "title": "Home & lifestyle", 
-                    "on": "WeekendIcon",
+                    "icon": "WeekendIcon",
                     "illustration": "homeLifestyle"
                 },
                 {   
@@ -219,7 +212,7 @@
         },
         {
             "title": "Your demo environment is ready!",
-            "description": "Before you can start creating awesome campaigns so first need to setup your account to gain access at al time.",
+            "description": "Enter your personal details so we can send you an email to enter your demo environment",
             "type": "input",
             "step": "3",
             "illustration": "profile",
@@ -246,16 +239,16 @@
                 },
                 {   
                     "key": 3,
-                    "label": "Company name",
+                    "label": "Job title",
                     "type": "text",
                     "width": "fullwidth"
                 }
             ]
         },
         {
-            "title": "Setup completed!",
+            "title": "You've received an entry mail {name}!",
             "step": "4",
-            "description": "Confirm that the information you've provided is correct and agree to the terms of condition before entering your demo environment.",
+            "description": "We've sent an email to {Email} with a link to acces your personal demo enviroment",
             "type": "stepper",
             "illustration": "confetti",
             "previous": "account details"
