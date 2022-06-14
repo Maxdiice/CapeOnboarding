@@ -72,23 +72,23 @@ function App() {
             if (questions.questionList[currentQuestion + 1].type == 'select') {
                 setIllustration(answers[currentQuestion + 1])
             } else setIllustration(questions.questionList[currentQuestion + 1].illustration)
-        } else setIllustration(questions.questionList[currentQuestion +1].illustration)
-        
+        } else setIllustration(questions.questionList[currentQuestion + 1].illustration)
+
     }
 
     //Previous question
     const previousQuestion = () => {
         setCurrentQuestion(currentQuestion - 1)
-        
+
         if (currentQuestion == 2) {
             setIllustration('paint')
         } else if (questions.questionList[currentQuestion - 1].type === 'select') {
             setIllustration(answers[currentQuestion - 1])
         } else setIllustration(questions.questionList[currentQuestion - 1].illustration)
-        
+
     }
 
-    //answer single
+    //Select single answer
     const handleChange = (e) => {
         const newValue = e.target && e.target.value ? e.target.value : e;
         if (newValue === selectedValue) {
@@ -100,7 +100,7 @@ function App() {
         }
     };
 
-    // Multi select 
+    //Select multiple answers
     const channelCheckbox = (e) => {
         const newItem = [...channels];
         newItem[e] = channels[e] ? false : true;
@@ -108,7 +108,7 @@ function App() {
         console.log(channels);
     }
 
-    // Toggle answer channels
+    //Toggle multiple answers
     const handleContact = (event) => {
         if (!contact.includes(event.target.value)) {
             setContact((contact) => [...contact, event.target.value])
@@ -148,7 +148,7 @@ function App() {
     //Multiple inputProps
     const handleInputs = (e, index) => {
         const newItem = [...inputsFilled];
-    
+
         if (question.quantity == "multiple") {
             const newInputs = [...inputs];
             newInputs[index] = e.target.value;
@@ -160,22 +160,22 @@ function App() {
                 newItem[index] = false
                 setInputsFilled(newItem)
             }
-    
+
             setInputs(newInputs)
         } else setFormats(e.target.value)
 
     };
- 
+
     //Click previous stepper
     const navigateBack = (e) => {
-        if(currentQuestion > e) {
+        if (currentQuestion > e) {
             console.log(answers[e])
             setCurrentQuestion(e)
-                if (questions.questionList[e].type == 'select') {
-                    setIllustration(answers[e])
-                } else setIllustration(questions.questionList[e].illustration)
+            if (questions.questionList[e].type == 'select') {
+                setIllustration(answers[e])
             } else setIllustration(questions.questionList[e].illustration)
-        }
+        } else setIllustration(questions.questionList[e].illustration)
+    }
 
 
     // rendering the current question
@@ -200,25 +200,23 @@ function App() {
                         )
                     })
                     }</div>
-
             case 'input':
                 return question.answers.map((item, index) => {
                     return (
-                    <Input
-                        title={item.label}
-                        onChange={handleInputs}
-                        type={item.type}
-                        list={question.quantity == "multiple" ? inputs[index] : formats}
-                        width={item.width}
-                        id={item.key}
-                        emailValidated={emailValidated}
-                        onChangeEmail={onChangeEmail}
-                        emailValidation={emailValidation}
-                        index={index}
-                    />)
+                        <Input
+                            title={item.label}
+                            onChange={handleInputs}
+                            type={item.type}
+                            list={question.quantity == "multiple" ? inputs[index] : formats}
+                            width={item.width}
+                            id={item.key}
+                            emailValidated={emailValidated}
+                            onChangeEmail={onChangeEmail}
+                            emailValidation={emailValidation}
+                            index={index}
+                        />)
 
                 })
-
             case 'multi':
                 return question.answers.map(item => {
                     return (
@@ -235,7 +233,7 @@ function App() {
                         />
                     )
                 })
-                case 'sector':
+            case 'sector':
                 return <div className="sector-flexbox">{question.answers.map(item => {
                     return (
                         <Sector
@@ -264,7 +262,7 @@ function App() {
                                 label={"Display channels"}
                                 list={question.managementAnswers}
                             />
-                            </>
+                        </>
 
                     } else {
                         return <Toggle onClick={handleContact} contact={contact} label={"Social Media Platforms"} list={question.socialAnswers} />
@@ -279,31 +277,31 @@ function App() {
         }
     }
 
-    return ( <>
-    <a href="https://www.bycape.io"><Cape style={{position:"absolute", margin: "24"}} href="bycape.io"/></a>
-    <div className="box">
-                <div className="question-container">
-                    <Heading title={question.title} subtext={question.description} brandName={answers[1]} personInfo={answers[5]}></Heading>
-                    <div className="margin-question" />
-                    {renderQuestion()}
-                    <ButtonStyled
-                        onClick={submitAnswer}
-                        disabled={nextQuestion(channels, selectedValue, contact)}
-                        previous={previousQuestion}
-                        previousText={question.previous}
-                        currentQuestion={currentQuestion}
-                    />
-                </div>
-                <div className="stepper-container">
-                    <Stepper
-                        currentQuestion={question.step}
-                        highest={highest}
-                        navigateQuestion={navigateBack}
-                        illustration={illustration}
-                    />
-                </div>
+    return (<>
+        <a href="https://www.bycape.io"><Cape style={{ position: "absolute", margin: "24" }} href="bycape.io" /></a>
+        <div className="box">
+            <div className="question-container">
+                <Heading title={question.title} subtext={question.description} brandName={answers[1]} personInfo={answers[5]}></Heading>
+                <div className="margin-question" />
+                {renderQuestion()}
+                <ButtonStyled
+                    onClick={submitAnswer}
+                    disabled={nextQuestion(channels, selectedValue, contact)}
+                    previous={previousQuestion}
+                    previousText={question.previous}
+                    currentQuestion={currentQuestion}
+                />
             </div>
-        </>
+            <div className="stepper-container">
+                <Stepper
+                    currentQuestion={question.step}
+                    highest={highest}
+                    navigateQuestion={navigateBack}
+                    illustration={illustration}
+                />
+            </div>
+        </div>
+    </>
     );
 }
 

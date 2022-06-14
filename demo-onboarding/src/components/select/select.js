@@ -14,7 +14,7 @@ function Select(props) {
       }
     },
   });
-
+  
   const checkedItem = () => {
       return props.givenAnswer ? props.setSelected(props.givenAnswer) : null;
   }

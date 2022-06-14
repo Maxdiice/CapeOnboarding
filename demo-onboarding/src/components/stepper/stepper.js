@@ -8,7 +8,8 @@ import SvgIcon from '@mui/material/SvgIcon';
 
 
 function Stepper(props) {
-
+    
+    //Check if current step is active, been passed or yet to come
     const checkStatus = (e) => {
         if (props.currentQuestion > e) {
                 if (props.currentQuestion == e + 0.5) {

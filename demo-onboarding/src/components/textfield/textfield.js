@@ -6,6 +6,7 @@ import './textfieldStyle.css';
 
 function Input(props) {
 
+    //Check type of inputfield
     const fieldType = () => {
         switch (props.type) {
             case "email":

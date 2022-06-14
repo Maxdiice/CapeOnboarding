@@ -23,12 +23,12 @@ function Multi(props) {
     <ThemeProvider theme={theme}>      
       <div
       onClick={() => props.onChange(props.id)}
-      className={"radio-option radio-option-big"  +  (props.visible[props.id]? ' active' : '' )}
+      className={"radio-option radio-option-" + (props.answerSize)  +  (props.visible[props.id]? ' active' : '' )}
       >
-        <div className={"icon-big"}>
+        <div className={"icon-" + (props.answerSize)}>
           <SvgIcon component={GetSVG(props.icon)} inheritViewBox />
         </div>
-        <div className={"question-text question-text-big"}>
+        <div className={"question-text question-text-"  + (props.answerSize)}>
           <h3>{props.title}</h3>
           <p><small>{props.description}</small></p>
         </div> 
